@@ -8,7 +8,9 @@
             "email": "captain@danny.gg"
         }
     ],
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    },
     "autoload": {
         "psr-4": {
             "\\Lichess\\": ""
