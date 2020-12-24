@@ -1,0 +1,12 @@
+{
+    "name": "dannybattison/php-lichess",
+    "description": "PHP wrapper for the Lichess API",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Danny Battison",
+            "email": "captain@danny.gg"
+        }
+    ],
+    "require": {}
+}
