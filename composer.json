@@ -1,7 +1,7 @@
 {
     "name": "dannybattison/php-lichess",
     "description": "PHP wrapper for the Lichess API",
-    "type": "library",
+    "type": "package",
     "authors": [
         {
             "name": "Danny Battison",
