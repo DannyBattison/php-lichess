@@ -12,8 +12,8 @@
         "guzzlehttp/guzzle": "^7.2"
     },
     "autoload": {
-        "psr-4": {
-            "\\Lichess\\": ""
+        "psr-0": {
+            "\\Lichess\\": "./src"
         }
     }
 }
