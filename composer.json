@@ -8,5 +8,10 @@
             "email": "captain@danny.gg"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "\\Lichess\\": ""
+        }
+    }
 }
