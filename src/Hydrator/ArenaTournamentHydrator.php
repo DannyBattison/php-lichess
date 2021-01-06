@@ -3,11 +3,9 @@
 namespace Lichess\Hydrator;
 
 use Lichess\Entity\ArenaTournament;
+use PHydrator\AbstractHydrator;
 
-/**
- * @method hydrateOne(object $data): ArenaTournament
- */
 class ArenaTournamentHydrator extends AbstractHydrator
 {
-    protected static string $entityClass = ArenaTournament::class;
+	protected const ENTITY_CLASS = ArenaTournament::class;
 }

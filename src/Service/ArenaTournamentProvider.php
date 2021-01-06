@@ -2,25 +2,24 @@
 
 namespace Lichess\Service;
 
-use GuzzleHttp\Client;
 use Lichess\Entity\ArenaTournament;
-use Lichess\Hydrator\ArenaTournamentHydrator;
+use Lichess\Lichess;
 
 class ArenaTournamentProvider
 {
-    private Client $client;
-    private ArenaTournamentHydrator $hydrator;
+    private Lichess $lichess;
 
-    public function __construct(Client $client)
+    public function __construct(Lichess $lichess)
     {
-        $this->client = $client;
-        $this->hydrator = new ArenaTournamentHydrator();
+        $this->lichess = $lichess;
     }
 
     public function getTournament(string $id): ArenaTournament
     {
-        $response = $this->client->get('tournament/' . $id);
+        $response = $this->lichess->getClient()->get('tournament/' . $id);
+        /** @var ArenaTournament $arenaTournament */
+		$arenaTournament = $this->lichess->getHydrator()->hydrateOne(ArenaTournament::class, json_decode($response->getBody()->getContents(), true));
 
-        return $this->hydrator->hydrateOne(json_decode($response->getBody()->getContents()));
+		return $arenaTournament;
     }
 }
